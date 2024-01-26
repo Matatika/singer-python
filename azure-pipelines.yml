@@ -3,6 +3,13 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
+resources:
+  repositories:
+  - repository: singer-tools
+    type: github
+    endpoint: Matatika
+    name: Matatika/singer-tools
+
 trigger:
 - master
 
@@ -23,7 +30,7 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
-- checkout: git://Matatika/singer-tools
+- checkout: singer-tools
   displayName: 'Checkout singer-tools'
 
 - script: make venv
