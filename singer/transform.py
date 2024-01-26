@@ -47,6 +47,7 @@ def breadcrumb_path(breadcrumb):
     return name
 
 
+# pylint: disable=consider-using-f-string
 class SchemaMismatch(Exception):
     def __init__(self, errors):
         if not errors:
