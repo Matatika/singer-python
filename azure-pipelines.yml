@@ -23,6 +23,9 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
+- checkout: git://Matatika/singer-tools
+  displayName: 'Checkout singer-tools'
+
 - script: make venv
   displayName: 'Create virtual environment'
 

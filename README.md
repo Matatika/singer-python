@@ -36,6 +36,21 @@ singer.write_records('my_table',
 singer.write_state({'my_table': 'd'})
 ```
 
+Development
+---
+
+This library depends on singer-tools.
+
+We recommend cloning singer-tools locally during development
+to avoid cyclic dependency issues.  e.g. jsonschema at different
+versions.
+
+```bash
+git clone http://github.com/Matatika/singer-tools
+git clone http://github.com/singer-io/singer-python
+cd singer-python
+make install
+```
 
 License
 -------
